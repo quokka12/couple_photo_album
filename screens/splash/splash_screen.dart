@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../config/font/font_size.dart';
-import '../../config/router/router_names.dart';
+import '../../config/router/route_names.dart';
 import '../../config/size/widget_size.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer(Duration(milliseconds: 1500), () => context.goNamed(RouteNames.bottomNavigationBar));
+    Timer(Duration(milliseconds: 1500), () => context.goNamed(RouteNames.bottomBar));
   }
 
   @override

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:photo_album/screens/album/album_sceen.dart';
+import 'package:photo_album/screens/album/album_screen.dart';
 
 import '../d_day/d_day_screen.dart';
 import 'widget/bottom_bar.dart';

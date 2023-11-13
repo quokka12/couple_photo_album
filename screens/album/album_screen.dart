@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:photo_album/screens/album/widget/post_list_view.dart';
+import 'package:go_router/go_router.dart';
+import 'package:photo_album/config/router/route_names.dart';
+import 'package:photo_album/screens/album/widget/story_list_view.dart';
 
 import '../../config/font/font_size.dart';
+import '../../controller/category_controller.dart';
 
 class AlbumScreen extends StatefulWidget {
   const AlbumScreen({super.key});
@@ -12,7 +15,6 @@ class AlbumScreen extends StatefulWidget {
 
 class _AlbumScreenState extends State<AlbumScreen> {
   String selectedCategory = "";
-  var category = ['특별한 추억', '명소', '식당', '카페', '놀거리', '숙소', 'sksksksksk'];
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +22,18 @@ class _AlbumScreenState extends State<AlbumScreen> {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.white,
-          title: Text('우리의 추억 리스트', style: TextStyle(fontSize: FontSize.H3, color: Colors.black87)),
-          shadowColor: Colors.grey,
+          title: Text('진형이의 스토리', style: TextStyle(fontSize: FontSize.H3, color: Colors.black87)),
           elevation: 0,
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.search_rounded,
+                color: Colors.black87,
+                size: 32,
+              ),
+            ),
+          ],
         ),
         body: SizedBox(
           child: Column(
@@ -30,7 +41,7 @@ class _AlbumScreenState extends State<AlbumScreen> {
               categoryHelper(),
               Expanded(
                 flex: 9,
-                child: PostListView(category: ''),
+                child: StoryListView(category: ''),
               ),
             ],
           ),
@@ -42,7 +53,7 @@ class _AlbumScreenState extends State<AlbumScreen> {
             style: TextStyle(fontSize: FontSize.BODY),
           ),
           icon: Icon(Icons.edit),
-          onPressed: () {},
+          onPressed: () => context.pushNamed(RouteNames.addStory),
         ),
       ),
     );
@@ -55,24 +66,28 @@ class _AlbumScreenState extends State<AlbumScreen> {
         padding: EdgeInsets.only(top: 12, bottom: 12),
         child: Row(
           children: [
-            for (int i = 0; i < category.length; i++)
+            for (int i = 0; i < CategoryController.category.length; i++)
               GestureDetector(
-                onTap: () => setState(() => selectedCategory = category[i]),
+                onTap: () => setState(() => selectedCategory = CategoryController.category[i]),
                 child: Container(
                   margin: EdgeInsets.symmetric(horizontal: 8),
                   padding: EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    color: selectedCategory == category[i] ? Color(0xffFF4156) : Colors.white,
+                    color: selectedCategory == CategoryController.category[i]
+                        ? Color(0xffFF4156)
+                        : Colors.white,
                     borderRadius: BorderRadius.circular(12),
                     boxShadow: const [
                       BoxShadow(color: Colors.black26, blurRadius: 2),
                     ],
                   ),
                   child: Text(
-                    category[i],
+                    CategoryController.category[i],
                     style: TextStyle(
                         fontSize: FontSize.BODY,
-                        color: selectedCategory == category[i] ? Colors.white : Colors.black87),
+                        color: selectedCategory == CategoryController.category[i]
+                            ? Colors.white
+                            : Colors.black87),
                   ),
                 ),
               ),
