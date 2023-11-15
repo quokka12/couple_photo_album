@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:photo_album/config/theme/main_theme.dart';
 
-import '../config/router/app_router.dart';
+import 'config/router/app_router.dart';
 
 void main() {
   runApp(const MyApp());

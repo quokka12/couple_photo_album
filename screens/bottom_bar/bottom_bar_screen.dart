@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:photo_album/screens/album/album_screen.dart';
+import 'package:photo_album/screens/setting/setting_screen.dart';
 
 import '../d_day/d_day_screen.dart';
 import 'widget/bottom_bar.dart';
@@ -17,7 +18,7 @@ class BottomBarScreen extends StatelessWidget {
           children: [
             AlbumScreen(),
             DDayScreen(),
-            Text('마이 스크린'),
+            SettingScreen(),
           ],
         ),
         bottomNavigationBar: BottomBar(),

@@ -18,43 +18,41 @@ class _AlbumScreenState extends State<AlbumScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          title: Text('진형이의 스토리', style: TextStyle(fontSize: FontSize.H3, color: Colors.black87)),
-          elevation: 0,
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.search_rounded,
-                color: Colors.black87,
-                size: 32,
-              ),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Text('진지커플 스토리', style: TextStyle(fontSize: FontSize.H3, color: Colors.black87)),
+        elevation: 0,
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.search_rounded,
+              color: Colors.black87,
+              size: 32,
+            ),
+          ),
+        ],
+      ),
+      body: SizedBox(
+        child: Column(
+          children: [
+            categoryHelper(),
+            Expanded(
+              flex: 9,
+              child: StoryListView(category: ''),
             ),
           ],
         ),
-        body: SizedBox(
-          child: Column(
-            children: [
-              categoryHelper(),
-              Expanded(
-                flex: 9,
-                child: StoryListView(category: ''),
-              ),
-            ],
-          ),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        backgroundColor: Color(0xffFF4156),
+        label: Text(
+          '추억 등록하기',
+          style: TextStyle(fontSize: FontSize.BODY),
         ),
-        floatingActionButton: FloatingActionButton.extended(
-          backgroundColor: Color(0xffFF4156),
-          label: Text(
-            '추억 등록하기',
-            style: TextStyle(fontSize: FontSize.BODY),
-          ),
-          icon: Icon(Icons.edit),
-          onPressed: () => context.pushNamed(RouteNames.addStory),
-        ),
+        icon: Icon(Icons.edit),
+        onPressed: () => context.pushNamed(RouteNames.addStory),
       ),
     );
   }
