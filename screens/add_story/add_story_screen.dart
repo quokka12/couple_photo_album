@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:photo_album/screens/add_story/widget/add_story_form.dart';
 
-import '../../config/font/my_font_size.dart';
+import '../../config/font/my_font_style.dart';
 
 class AddStoryScreen extends StatefulWidget {
   const AddStoryScreen({super.key});
@@ -15,44 +15,13 @@ class _AddStoryScreenState extends State<AddStoryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(56),
-        child: SafeArea(
-          child: Container(
-            width: 56,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              boxShadow: [BoxShadow(blurRadius: 1, color: Colors.grey, offset: Offset(0, 2))],
-            ),
-            child: Row(
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    alignment: Alignment.centerLeft,
-                    child: IconButton(
-                      onPressed: () => context.pop(),
-                      icon: Icon(Icons.navigate_before, size: 36),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  flex: 3,
-                  child: Center(
-                    child: Text(
-                      '스토리 추가',
-                      style: TextStyle(fontSize: MyFontSize.H4),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: SizedBox(),
-                )
-              ],
-            ),
-          ),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Text('스토리 추가', style: MyFontStyle.title3()),
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.navigate_before_rounded, color: Colors.black87, size: 40),
+          onPressed: () => context.pop(),
         ),
       ),
       body: SafeArea(

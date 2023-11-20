@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../config/font/my_font_size.dart';
+import '../../../config/router/route_names.dart';
 import '../../../config/size/widget_size.dart';
 
 class StoryCard extends StatelessWidget {
@@ -9,7 +11,7 @@ class StoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () => context.pushNamed(RouteNames.storyView),
       child: Container(
         padding: EdgeInsets.all(12),
         child: Column(
