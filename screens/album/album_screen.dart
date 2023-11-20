@@ -3,7 +3,8 @@ import 'package:go_router/go_router.dart';
 import 'package:photo_album/config/router/route_names.dart';
 import 'package:photo_album/screens/album/widget/story_list_view.dart';
 
-import '../../config/font/font_size.dart';
+import '../../config/font/my_font_size.dart';
+import '../../config/font/my_font_style.dart';
 import '../../controller/category_controller.dart';
 
 class AlbumScreen extends StatefulWidget {
@@ -21,7 +22,7 @@ class _AlbumScreenState extends State<AlbumScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text('진지커플 스토리', style: TextStyle(fontSize: FontSize.H3, color: Colors.black87)),
+        title: Text('진지커플 스토리', style: MyFontStyle.title3()),
         elevation: 0,
         actions: [
           IconButton(
@@ -49,7 +50,7 @@ class _AlbumScreenState extends State<AlbumScreen> {
         backgroundColor: Color(0xffFF4156),
         label: Text(
           '추억 등록하기',
-          style: TextStyle(fontSize: FontSize.BODY),
+          style: TextStyle(fontSize: MyFontSize.BODY),
         ),
         icon: Icon(Icons.edit),
         onPressed: () => context.pushNamed(RouteNames.addStory),
@@ -82,7 +83,7 @@ class _AlbumScreenState extends State<AlbumScreen> {
                   child: Text(
                     CategoryController.category[i],
                     style: TextStyle(
-                        fontSize: FontSize.BODY,
+                        fontSize: MyFontSize.BODY,
                         color: selectedCategory == CategoryController.category[i]
                             ? Colors.white
                             : Colors.black87),

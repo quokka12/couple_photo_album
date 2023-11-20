@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-import '../../config/font/font_size.dart';
+import '../../config/font/my_font_size.dart';
 import '../../config/size/widget_size.dart';
 
 class DDayScreen extends StatelessWidget {
@@ -22,9 +22,9 @@ class DDayScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(),
-              Text('우리가 처음 만난 날', style: TextStyle(fontSize: FontSize.H2, color: Colors.white)),
-              Text('2018.02.03', style: TextStyle(fontSize: FontSize.H3, color: Colors.white)),
-              Text(dDay, style: TextStyle(fontSize: FontSize.H2, color: Colors.white)),
+              Text('우리가 처음 만난 날', style: TextStyle(fontSize: MyFontSize.H2, color: Colors.white)),
+              Text('2018.02.03', style: TextStyle(fontSize: MyFontSize.H3, color: Colors.white)),
+              Text(dDay, style: TextStyle(fontSize: MyFontSize.H2, color: Colors.white)),
               Lottie.asset("assets/animations/dday.json",
                   width: WidgetSize.ratioOfVertical(context, 0.4)),
               Image.asset(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:photo_album/screens/add_story/widget/add_story_form.dart';
 
-import '../../config/font/font_size.dart';
+import '../../config/font/my_font_size.dart';
 
 class AddStoryScreen extends StatefulWidget {
   const AddStoryScreen({super.key});
@@ -42,7 +42,7 @@ class _AddStoryScreenState extends State<AddStoryScreen> {
                   child: Center(
                     child: Text(
                       '스토리 추가',
-                      style: TextStyle(fontSize: FontSize.H4),
+                      style: TextStyle(fontSize: MyFontSize.H4),
                     ),
                   ),
                 ),

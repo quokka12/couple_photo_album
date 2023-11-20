@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../config/font/font_size.dart';
+import '../../../config/font/my_font_size.dart';
 
 class BottomBar extends StatelessWidget {
   const BottomBar({super.key});
@@ -23,7 +23,7 @@ class BottomBar extends StatelessWidget {
         labelColor: Color(0xffFF4156), //Color(0xffe66a77)
         unselectedLabelColor: Colors.grey,
         labelStyle: TextStyle(
-          fontSize: FontSize.BODY,
+          fontSize: MyFontSize.BODY,
           fontFamily: "sunflower",
         ),
         indicatorColor: Colors.transparent,

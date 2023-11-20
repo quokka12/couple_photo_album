@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../config/font/font_size.dart';
+import '../../../config/font/my_font_size.dart';
 import '../../../config/size/widget_size.dart';
 
 class StoryCard extends StatelessWidget {
@@ -34,14 +34,14 @@ class StoryCard extends StatelessWidget {
                   Text(
                     "Test입니다.",
                     style: TextStyle(
-                      fontSize: FontSize.BODY,
+                      fontSize: MyFontSize.BODY,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
                     "2023-11-11",
                     style: TextStyle(
-                      fontSize: FontSize.BODY,
+                      fontSize: MyFontSize.BODY,
                       fontWeight: FontWeight.bold,
                       color: Color(0xff808080),
                     ),

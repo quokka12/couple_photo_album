@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../config/font/font_size.dart';
+import '../../config/font/my_font_size.dart';
 import '../../config/router/route_names.dart';
 import '../../config/size/widget_size.dart';
 
@@ -44,13 +44,13 @@ class _SplashScreenState extends State<SplashScreen> {
                   flex: 10,
                   child: Text('진지커플 스토리',
                       style: TextStyle(
-                          fontSize: FontSize.H1,
+                          fontSize: MyFontSize.H1,
                           fontWeight: FontWeight.bold,
                           color: Colors.white))),
               Expanded(
                   flex: 1,
                   child: Text('© Copyright 2023, CONER Co.',
-                      style: TextStyle(fontSize: FontSize.BODY, color: Colors.white))),
+                      style: TextStyle(fontSize: MyFontSize.BODY, color: Colors.white))),
             ],
           ),
         ),

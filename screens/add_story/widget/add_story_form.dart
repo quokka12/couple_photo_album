@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:kpostal/kpostal.dart';
 import 'package:photo_album/controller/camera_controller.dart';
 
-import '../../../config/font/font_size.dart';
+import '../../../config/font/my_font_size.dart';
 import '../../../config/size/widget_size.dart';
 import '../../../controller/category_controller.dart';
 
@@ -83,7 +83,7 @@ class _AddStoryFormState extends State<AddStoryForm> {
                   child: Text(
                     CategoryController.category[i],
                     style: TextStyle(
-                        fontSize: FontSize.BODY,
+                        fontSize: MyFontSize.BODY,
                         color: selectedCategory == CategoryController.category[i]
                             ? Colors.white
                             : Colors.black87),
@@ -102,7 +102,7 @@ class _AddStoryFormState extends State<AddStoryForm> {
         context,
         MaterialPageRoute(
           builder: (_) => KpostalView(
-            useLocalServer: true,
+            useLocalServer: false,
             //useLocalServer 속성을 false로 설정하면 KpostalView가 로컬 서버를 사용하지 않고, 카카오 지도로 직접 주소 검색을 수행
             localPort: 1024,
             // kakaoKey: '{Add your KAKAO DEVELOPERS JS KEY}',
@@ -174,7 +174,7 @@ class _AddStoryFormState extends State<AddStoryForm> {
           setState(() {});
         },
         child: Text('사진 추가하기',
-            style: TextStyle(fontSize: FontSize.BODY, decoration: TextDecoration.underline)),
+            style: TextStyle(fontSize: MyFontSize.BODY, decoration: TextDecoration.underline)),
       ),
     );
   }
@@ -195,13 +195,14 @@ class _AddStoryFormState extends State<AddStoryForm> {
                         return AlertDialog(
                           title: Text(
                             '사진 삭제',
-                            style: TextStyle(fontSize: FontSize.BODY, fontWeight: FontWeight.bold),
+                            style:
+                                TextStyle(fontSize: MyFontSize.BODY, fontWeight: FontWeight.bold),
                           ),
-                          content:
-                              Text('해당 사진을 정말 삭제하겠습니까?', style: TextStyle(fontSize: FontSize.BODY)),
+                          content: Text('해당 사진을 정말 삭제하겠습니까?',
+                              style: TextStyle(fontSize: MyFontSize.BODY)),
                           actions: [
                             TextButton(
-                              child: Text('삭제', style: TextStyle(fontSize: FontSize.BODY)),
+                              child: Text('삭제', style: TextStyle(fontSize: MyFontSize.BODY)),
                               onPressed: () {
                                 Navigator.pop(context);
                                 setState(() {
@@ -210,7 +211,7 @@ class _AddStoryFormState extends State<AddStoryForm> {
                               },
                             ),
                             TextButton(
-                              child: Text('닫기', style: TextStyle(fontSize: FontSize.BODY)),
+                              child: Text('닫기', style: TextStyle(fontSize: MyFontSize.BODY)),
                               onPressed: () => Navigator.pop(context),
                             ),
                           ],
@@ -248,7 +249,7 @@ class _AddStoryFormState extends State<AddStoryForm> {
             '스토리 추가하기',
             style: TextStyle(
               color: Colors.white,
-              fontSize: FontSize.H4,
+              fontSize: MyFontSize.H4,
               fontWeight: FontWeight.bold,
             ),
           ),

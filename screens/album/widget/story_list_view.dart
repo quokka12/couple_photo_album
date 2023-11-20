@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
-import '../../../config/font/font_size.dart';
+import '../../../config/font/my_font_size.dart';
 import '../../../config/size/widget_size.dart';
 
 class StoryListView extends StatelessWidget {
@@ -48,7 +48,7 @@ class StoryListView extends StatelessWidget {
                                       child: Text(
                                         "Test입니다.",
                                         style: TextStyle(
-                                          fontSize: FontSize.BODY,
+                                          fontSize: MyFontSize.BODY,
                                           fontWeight: FontWeight.bold,
                                         ),
                                       ),
@@ -65,7 +65,7 @@ class StoryListView extends StatelessWidget {
                                       child: Text(
                                         "2023-11-11",
                                         style: TextStyle(
-                                          fontSize: FontSize.BODY,
+                                          fontSize: MyFontSize.BODY,
                                           fontWeight: FontWeight.bold,
                                           color: Color(0xff808080),
                                         ),

@@ -1,4 +1,4 @@
-class FontSize {
+class MyFontSize {
   static final H1 = 40.0;
   static final H2 = 32.0;
   static final H3 = 24.0;
